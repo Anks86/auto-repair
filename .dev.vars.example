@@ -1,0 +1,12 @@
+# Public Turnstile test key for local testing only.
+TURNSTILE_SITE_KEY="1x00000000000000000000AA"
+
+# Paste Cloudflare's documented always-pass test secret into your private .dev.vars file.
+# Never put the production Turnstile secret in this example file.
+TURNSTILE_SECRET_KEY="replace-with-cloudflare-test-secret"
+
+EMAIL_FROM="website@niagaraautorepair.com"
+EMAIL_TO="babbalautorepair@gmail.com"
+
+# Add the exact live hostname in Cloudflare production settings.
+TURNSTILE_HOSTNAME="niagaraautorepair.com"

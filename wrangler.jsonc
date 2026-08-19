@@ -1,0 +1,25 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "babbal-auto-repair",
+  "pages_build_output_dir": "./dist",
+  "compatibility_date": "2026-08-19",
+  "send_metrics": false,
+  "send_email": [
+    {
+      "name": "EMAIL",
+      "destination_address": "babbalautorepair@gmail.com",
+      "allowed_sender_addresses": [
+        "website@niagaraautorepair.com"
+      ]
+    }
+  ],
+  "secrets": {
+    "required": [
+      "TURNSTILE_SITE_KEY",
+      "TURNSTILE_SECRET_KEY",
+      "EMAIL_FROM",
+      "EMAIL_TO",
+      "TURNSTILE_HOSTNAME"
+    ]
+  }
+}
