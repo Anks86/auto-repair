@@ -6,7 +6,7 @@ The site is designed for fast mobile access. Its primary actions are Call, Text,
 
 ## Current status
 
-The website is complete locally and has passed responsive, interaction, accessibility, link, form, security, and Cloudflare build checks. The production domain, `niagaraautorepair.com`, is registered in Cloudflare, Email Routing is enabled, `babbalautorepair@gmail.com` is verified as the destination, and the Turnstile widget is created. The public GitHub repository is connected to Cloudflare with access limited to this project. The site has not completed its production deployment. Real form delivery still requires the Worker deployment, production variables, custom domain, and one successful live inbox test.
+The website has passed responsive, interaction, accessibility, link, form, security, and Cloudflare build checks. The `babbal-auto-repair` Worker is deployed from this repository, its production variables and restricted email binding are configured, and `niagaraautorepair.com` is publicly reachable as the custom domain. Email Routing is enabled, `babbalautorepair@gmail.com` is verified as the destination, and the Turnstile widget is configured for the production hostname. One successful live inbox test is the remaining launch check.
 
 ## Local setup
 
