@@ -35,6 +35,8 @@ const homeTranslations = [
   ["24/7 mobile vehicle help in Niagara | Babbal Auto Repair", "Dépannage automobile mobile 24 h sur 24 dans Niagara | Babbal Auto Repair"],
   ["Call or text Babbal Auto Repair for 24/7 mobile vehicle help across the Niagara Region at genuinely low prices.", "Appelez ou textez Babbal Auto Repair pour un dépannage automobile mobile 24 h sur 24 dans toute la région de Niagara, à des prix vraiment bas."],
   ["24/7 mobile roadside and vehicle maintenance help across the Niagara Region.", "Dépannage routier et entretien automobile mobiles 24 h sur 24 dans toute la région de Niagara."],
+  ["Babbal Auto Repair, 24/7 mobile service", "Babbal Auto Repair, service mobile 24 h sur 24"],
+  ["Mobile roadside and maintenance help across the Niagara Region, day or night.", "Dépannage routier et entretien mobiles dans toute la région de Niagara, de jour comme de nuit."],
   ["Mobile vehicle help and service images", "Images de dépannage et de services automobiles mobiles"],
   ["1 of 3, battery boosts", "1 sur 3, survoltage de batterie"],
   ["2 of 3, flat tire and wheel help", "2 sur 3, aide pour pneu crevé et roue"],
@@ -308,6 +310,7 @@ function localizeRoutes(html, pageName) {
   const englishPath = pageName === "index.html" ? "/" : `/${pageName}`;
   const frenchCanonical = `https://niagaraautorepair.com${frenchPath}`;
   result = result
+    .replaceAll('"legalNom":', '"legalName":')
     .replace(/<link rel="canonical" href="[^"]+" \/>/, `<link rel="canonical" href="${frenchCanonical}" />`)
     .replace('<meta property="og:url" content="https://niagaraautorepair.com/" />', `<meta property="og:url" content="${frenchCanonical}" />`)
     .replace('<meta property="og:locale" content="en_CA" />', '<meta property="og:locale" content="fr_CA" />')

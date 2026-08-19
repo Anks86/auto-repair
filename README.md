@@ -6,7 +6,7 @@ The site is designed for fast mobile access. Its primary actions are Call, Text,
 
 ## Current status
 
-The website has passed responsive, interaction, accessibility, link, form, security, and Cloudflare build checks. The `babbal-auto-repair` Worker is deployed from this repository, its production variables and restricted email binding are configured, and `niagaraautorepair.com` is publicly reachable as the custom domain. Email Routing is enabled, `babbalautorepair@gmail.com` is verified as the destination, and the Turnstile widget is configured for the production hostname. One successful live inbox test is the remaining launch check.
+The website has passed responsive, interaction, accessibility, link, form, security, and Cloudflare build checks. The `babbal-auto-repair` Worker is deployed from this repository, its production variables and restricted email binding are configured, and `niagaraautorepair.com` is publicly reachable as the custom domain. Email Routing is enabled, `babbalautorepair@gmail.com` is verified as the destination, and the Turnstile widget is configured for the production hostname. A production form submission completed successfully and reached the verified Gmail destination on August 19, 2026. Google Search Console and Bing Webmaster Tools are connected, and both have received the production sitemap.
 
 ## Local setup
 
@@ -28,7 +28,10 @@ npm run build
 npm test
 npm run audit
 npm run check:worker
+npm run indexnow:submit
 ```
+
+Run the IndexNow command only after a release is publicly deployed. It notifies participating search engines about the six current sitemap URLs and does not guarantee indexing or ranking.
 
 The production-ready static output is written to `dist`.
 

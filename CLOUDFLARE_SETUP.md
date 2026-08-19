@@ -1,6 +1,6 @@
 # Cloudflare launch setup
 
-The site is deployed on Cloudflare Workers Free with static assets. The Worker is connected to the approved GitHub repository, and `niagaraautorepair.com` is publicly reachable as its production custom domain. The final live inbox test remains.
+The site is deployed on Cloudflare Workers Free with static assets. The Worker is connected to the approved GitHub repository, and `niagaraautorepair.com` is publicly reachable as its production custom domain. The production form and verified Gmail delivery test passed on August 19, 2026.
 
 ## Before the form can deliver real email
 
@@ -16,7 +16,7 @@ The site is deployed on Cloudflare Workers Free with static assets. The Worker i
    - `EMAIL_TO`, plain configuration value set to `babbalautorepair@gmail.com`
    - `TURNSTILE_HOSTNAME`, plain text, set to the exact live hostname
 
-6. Pending: send one real test request and confirm it arrives in Gmail before announcing the form.
+6. Completed August 19, 2026: a real production request showed success and arrived in the verified Gmail destination.
 
 ## GitHub and Cloudflare Workers
 

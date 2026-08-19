@@ -90,11 +90,38 @@ for (const relativeFile of ["index.html", "fr/index.html"]) {
   }
 
   structuredDataFiles += 1;
-  JSON.parse(match[1]);
+  const structuredData = JSON.parse(match[1]);
+  if (structuredData.legalName !== "Babbal Auto Repair Inc.") {
+    errors.push(`${relativeFile}: structured data is missing the confirmed legalName`);
+  }
+  if (Object.hasOwn(structuredData, "legalNom")) {
+    errors.push(`${relativeFile}: contains the invalid translated legalNom property`);
+  }
+  if (relativeFile === "fr/index.html") {
+    if (html.includes('content="Babbal Auto Repair, 24/7 mobile service"')) {
+      errors.push(`${relativeFile}: social image alternative text was not localized`);
+    }
+    if (html.includes('content="Mobile roadside and maintenance help across the Niagara Region, day or night."')) {
+      errors.push(`${relativeFile}: Twitter description was not localized`);
+    }
+  }
   const hash = `sha256-${crypto.createHash("sha256").update(match[1]).digest("base64")}`;
   if (!securityHeaders.includes(hash)) {
     errors.push(`${relativeFile}: structured-data hash is missing from the security policy`);
   }
+}
+
+const sitemap = fs.readFileSync(path.join(publicRoot, "sitemap.xml"), "utf8");
+const sitemapUrlCount = [...sitemap.matchAll(/<url>/g)].length;
+const sitemapLastmodCount = [...sitemap.matchAll(/<lastmod>\d{4}-\d{2}-\d{2}<\/lastmod>/g)].length;
+if (sitemapLastmodCount !== sitemapUrlCount) {
+  errors.push(`sitemap.xml: expected ${sitemapUrlCount} valid lastmod values, found ${sitemapLastmodCount}`);
+}
+
+const indexNowKey = "2349e7fd2e361ec2af90dc7f07097858";
+const indexNowKeyFile = path.join(publicRoot, `${indexNowKey}.txt`);
+if (!fs.existsSync(indexNowKeyFile) || fs.readFileSync(indexNowKeyFile, "utf8").trim() !== indexNowKey) {
+  errors.push("IndexNow: public verification file is missing or invalid");
 }
 
 const result = {

@@ -15,6 +15,7 @@ const publicFiles = [
   "site.webmanifest",
   "robots.txt",
   "sitemap.xml",
+  "2349e7fd2e361ec2af90dc7f07097858.txt",
   "_headers"
 ];
 
