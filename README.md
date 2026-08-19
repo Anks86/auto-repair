@@ -6,7 +6,7 @@ The site is designed for fast mobile access. Its primary actions are Call, Text,
 
 ## Current status
 
-The website is complete locally and has passed responsive, interaction, accessibility, link, form, security, and Cloudflare build checks. The production domain, `niagaraautorepair.com`, is registered in Cloudflare, Email Routing is enabled, `babbalautorepair@gmail.com` is verified as the destination, and the Turnstile widget is created. The site has not been deployed. Real form delivery still requires the Pages deployment, production variables, and one successful live inbox test.
+The website is complete locally and has passed responsive, interaction, accessibility, link, form, security, and Cloudflare build checks. The production domain, `niagaraautorepair.com`, is registered in Cloudflare, Email Routing is enabled, `babbalautorepair@gmail.com` is verified as the destination, and the Turnstile widget is created. The public GitHub repository is connected to Cloudflare with access limited to this project. The site has not completed its production deployment. Real form delivery still requires the Worker deployment, production variables, custom domain, and one successful live inbox test.
 
 ## Local setup
 
@@ -27,14 +27,14 @@ Useful commands:
 npm run build
 npm test
 npm run audit
-npm run check:functions
+npm run check:worker
 ```
 
 The production-ready static output is written to `dist`.
 
 ## Hosting
 
-The prepared target is Cloudflare Pages. Use `npm run build` as the build command and `dist` as the output directory. The request form uses Pages Functions, so the repository should be connected to a Cloudflare Pages project instead of using a static drag-and-drop upload.
+The prepared target is a Cloudflare Worker with static assets. Use `npm run build` as the Workers Builds build command and `npx wrangler deploy` as the deploy command. Static files are served directly by Cloudflare, while only `/api/*` requests invoke the Worker. The request form uses a destination-restricted Cloudflare Email binding, which is not supported by Pages.
 
 See `CLOUDFLARE_SETUP.md` for the account-dependent launch steps. Never commit `.dev.vars`, `.env`, account secrets, or production Turnstile secrets.
 

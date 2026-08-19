@@ -6,11 +6,11 @@
   "scripts": {
     "build": "node scripts/build-site.mjs",
     "test": "node --test",
-    "audit": "npm run build && node scripts/final-audit.mjs && npm test && npm run check:functions",
+    "audit": "npm run build && node scripts/final-audit.mjs && npm test && npm run check:worker",
     "qa": "npm run build && node scripts/qa-preview.mjs",
-    "dev": "npm run build && wrangler pages dev",
-    "check:functions": "wrangler pages functions build --outdir=.wrangler/functions",
-    "deploy": "npm run build && wrangler pages deploy dist --project-name=babbal-auto-repair"
+    "dev": "npm run build && wrangler dev",
+    "check:worker": "npm run build && wrangler deploy --dry-run --outdir=.wrangler/dry-run",
+    "deploy": "npm run build && wrangler deploy"
   },
   "devDependencies": {
     "wrangler": "4.124.0"
