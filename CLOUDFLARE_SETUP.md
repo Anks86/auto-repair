@@ -8,15 +8,15 @@ The site is deployed on Cloudflare Workers Free with static assets. The Worker i
 2. Completed: `babbalautorepair@gmail.com` is a verified Cloudflare Email Routing destination.
 3. Completed in code: the repository's `EMAIL` binding is restricted to that destination and to `website@niagaraautorepair.com` as the sender.
 4. Completed: the managed Turnstile widget is created for `niagaraautorepair.com`. Add an approved preview hostname only if preview form testing is required.
-5. Completed: these runtime values are configured under the Worker's Variables and Secrets:
+5. Completed: these non-secret runtime values are defined in `wrangler.jsonc`, which is the source of truth for every GitHub deployment:
 
    - `TURNSTILE_SITE_KEY`, public configuration value
-   - `TURNSTILE_SECRET_KEY`, encrypted
    - `EMAIL_FROM`, plain configuration value
    - `EMAIL_TO`, plain configuration value set to `babbalautorepair@gmail.com`
    - `TURNSTILE_HOSTNAME`, plain text, set to the exact live hostname
 
-6. Completed August 19, 2026: a real production request showed success and arrived in the verified Gmail destination.
+6. Completed: `TURNSTILE_SECRET_KEY` remains encrypted in Cloudflare and is declared as a required secret in `wrangler.jsonc`.
+7. Completed August 19, 2026: a real production request showed success and arrived in the verified Gmail destination.
 
 ## GitHub and Cloudflare Workers
 

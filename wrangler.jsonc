@@ -6,6 +6,16 @@
   "compatibility_flags": ["nodejs_compat"],
   "send_metrics": false,
   "workers_dev": true,
+  // Public runtime configuration. The Turnstile secret stays encrypted in Cloudflare.
+  "vars": {
+    "TURNSTILE_SITE_KEY": "0x4AAAAAAEV4ssCwimCIg8sc",
+    "EMAIL_FROM": "website@niagaraautorepair.com",
+    "EMAIL_TO": "babbalautorepair@gmail.com",
+    "TURNSTILE_HOSTNAME": "niagaraautorepair.com"
+  },
+  "secrets": {
+    "required": ["TURNSTILE_SECRET_KEY"]
+  },
   "assets": {
     "directory": "./dist",
     "binding": "ASSETS",
