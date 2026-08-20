@@ -25,15 +25,19 @@ const commonTranslations = [
   ["Accessibility", "Accessibilité"],
   ["Call now", "Appeler"],
   ["Text details", "Envoyer les détails"],
+  ["<span>Call</span>", "<span>Appeler</span>"],
+  ["<span>Text</span>", "<span>Texto</span>"],
   ["Call (289) 931-3791", "Appeler au (289) 931-3791"],
   ["Text (289) 931-3791", "Texter au (289) 931-3791"],
+  ["WhatsApp (289) 931-3791", "WhatsApp au (289) 931-3791"],
+  ["WhatsApp:", "WhatsApp :"],
   ["Service is subject to location, vehicle, parts, weather, and safe working conditions.", "Le service dépend du lieu, du véhicule, des pièces, de la météo et de conditions de travail sécuritaires."],
   ["Menu", "Menu"]
 ];
 
 const homeTranslations = [
   ["24/7 mobile vehicle help in Niagara | Babbal Auto Repair", "Dépannage automobile mobile 24 h sur 24 dans Niagara | Babbal Auto Repair"],
-  ["Call or text Babbal Auto Repair for 24/7 mobile vehicle help across the Niagara Region at genuinely low prices.", "Appelez ou textez Babbal Auto Repair pour un dépannage automobile mobile 24 h sur 24 dans toute la région de Niagara, à des prix vraiment bas."],
+  ["Call, text, or WhatsApp Babbal Auto Repair for 24/7 mobile vehicle help across the Niagara Region at genuinely low prices.", "Appelez, textez ou écrivez à Babbal Auto Repair sur WhatsApp pour un dépannage automobile mobile 24 h sur 24 dans toute la région de Niagara, à des prix vraiment bas."],
   ["24/7 mobile roadside and vehicle maintenance help across the Niagara Region.", "Dépannage routier et entretien automobile mobiles 24 h sur 24 dans toute la région de Niagara."],
   ["Babbal Auto Repair, 24/7 mobile service", "Babbal Auto Repair, service mobile 24 h sur 24"],
   ["Mobile roadside and maintenance help across the Niagara Region, day or night.", "Dépannage routier et entretien mobiles dans toute la région de Niagara, de jour comme de nuit."],
@@ -67,6 +71,8 @@ const homeTranslations = [
   ["Call about towing first. Babbal will inspect once the vehicle is at a safe location.", "Appelez d’abord au sujet du remorquage. Babbal fera l’inspection lorsque le véhicule sera dans un endroit sûr."],
   ["Call about towing", "Appeler pour le remorquage"],
   ["Text from a safe location", "Texter depuis un endroit sûr"],
+  ["WhatsApp from a safe location", "Écrire sur WhatsApp depuis un endroit sûr"],
+  ["WhatsApp details", "Envoyer les détails sur WhatsApp"],
   ["Meet Babbal", "Découvrez Babbal"],
   ["A local mechanic who comes to you", "Un mécanicien local qui vient à vous"],
   ["Babbal working beside a vehicle during a mobile service visit", "Babbal travaille près d’un véhicule pendant une visite de service mobile"],
@@ -177,9 +183,10 @@ const homeTranslations = [
   ["Show next real work photo", "Afficher la photo de travail suivante"],
   ["Non-urgent request", "Demande non urgente"],
   ["Tell Babbal what you need", "Dites à Babbal ce dont vous avez besoin"],
-  ["Share a few details and send your request directly to Babbal. He will reply by call or text.", "Donnez quelques détails et envoyez votre demande directement à Babbal. Il répondra par appel ou texto."],
+  ["Share a few details and send your request directly to Babbal. He will reply by call, text, or WhatsApp.", "Donnez quelques détails et envoyez votre demande directement à Babbal. Il répondra par appel, texto ou WhatsApp."],
   ["Need help right now?", "Besoin d’aide maintenant?"],
   ["Send details by text", "Envoyer les détails par texto"],
+  ["Send details by WhatsApp", "Envoyer les détails par WhatsApp"],
   ["Leave this field blank", "Laisser ce champ vide"],
   ["Name", "Nom"],
   ["Phone number", "Numéro de téléphone"],
@@ -194,13 +201,14 @@ const homeTranslations = [
   ["Briefly describe the problem or service you need", "Décrivez brièvement le problème ou le service demandé"],
   ["Spam protection", "Protection contre les pourriels"],
   ["Protected by Cloudflare Turnstile to reduce spam.", "Protégé par Cloudflare Turnstile pour réduire les pourriels."],
-  ["JavaScript is needed to send this form. You can still call or text Babbal.", "JavaScript est nécessaire pour envoyer ce formulaire. Vous pouvez toujours appeler ou texter Babbal."],
+  ["JavaScript is needed to send this form. You can still call, text, or WhatsApp Babbal.", "JavaScript est nécessaire pour envoyer ce formulaire. Vous pouvez toujours appeler, texter ou écrire à Babbal sur WhatsApp."],
   ["Sent only to Babbal and one authorized administrator, not stored on this website, and deleted from email after 90 days. Do not include payment details or sensitive information.", "Envoyé uniquement à Babbal et à un administrateur autorisé, non stocké sur ce site et supprimé du courriel après 90 jours. N’incluez pas de renseignements de paiement ni d’information sensible."],
   ["Privacy details", "Détails sur la confidentialité"],
   ["Send service request", "Envoyer la demande de service"],
-  ["Sent securely to Babbal. Replies come by call or text.", "Envoyé de façon sécurisée à Babbal. La réponse arrive par appel ou texto."],
+  ["Sent securely to Babbal. Replies come by call, text, or WhatsApp.", "Envoyé de façon sécurisée à Babbal. La réponse arrive par appel, texto ou WhatsApp."],
   ["Mobile. 24/7. Niagara.", "Mobile. 24 h sur 24. Niagara."],
-  ["Need mobile help? Call or text Babbal.", "Besoin d’aide mobile? Appelez ou textez Babbal."],
+  ["Need mobile help? Call, text, or WhatsApp Babbal.", "Besoin d’aide mobile? Appelez, textez ou écrivez à Babbal sur WhatsApp."],
+  ["WhatsApp Babbal", "Écrire à Babbal sur WhatsApp"],
   ["Call Babbal", "Appeler Babbal"]
 ];
 
@@ -236,12 +244,13 @@ const privacyTranslations = [
   ["The website has no customer database and does not keep a separate copy of a submitted request. Request emails are deleted from the active mailbox after 90 days. Service providers may retain limited security or backup records under their own policies.", "Le site ne possède aucune base de données clients et ne conserve aucune copie distincte d’une demande transmise. Les courriels de demande sont supprimés de la boîte active après 90 jours. Les fournisseurs de services peuvent conserver des dossiers limités de sécurité ou de sauvegarde selon leurs propres politiques."],
   ["How information is protected", "Comment les renseignements sont protégés"],
   ["The live website will use HTTPS, server-side form validation, spam protection, limited mailbox access, security headers, and secrets that are kept outside the public website files. No internet or email system can be guaranteed completely secure.", "Le site public utilisera HTTPS, la validation du formulaire côté serveur, une protection contre les pourriels, un accès limité à la boîte de réception, des en-têtes de sécurité et des secrets conservés hors des fichiers publics. Aucun système Internet ou de courriel ne peut être garanti comme entièrement sécurisé."],
-  ["You can call or text instead of using the website form.", "Vous pouvez appeler ou texter au lieu d’utiliser le formulaire du site."],
+  ["You can call, text, or WhatsApp instead of using the website form.", "Vous pouvez appeler, texter ou utiliser WhatsApp au lieu du formulaire du site."],
   ["You can ask what personal information Babbal has about you.", "Vous pouvez demander quels renseignements personnels Babbal détient à votre sujet."],
   ["You can ask for a correction or deletion, subject to any information Babbal must keep for a valid legal or operational reason.", "Vous pouvez demander une correction ou une suppression, sous réserve des renseignements que Babbal doit conserver pour une raison juridique ou opérationnelle valable."],
   ["You can make a privacy complaint and ask for a response.", "Vous pouvez déposer une plainte concernant la confidentialité et demander une réponse."],
   ["Privacy contact", "Responsable de la confidentialité"],
-  ["Call or text:", "Appel ou texto :"],
+  ["Call:", "Appel :"],
+  ["Text:", "Texto :"],
   ["Email:", "Courriel :"]
 ];
 
@@ -263,16 +272,17 @@ const accessibilityTranslations = [
   ["Uses clear headings, plain language, real labels, and predictable navigation.", "Utilise des titres clairs, un langage simple, de vraies étiquettes et une navigation prévisible."],
   ["Supports keyboard navigation, visible focus, and a skip link.", "Prend en charge la navigation au clavier, un indicateur de mise au point visible et un lien d’accès direct."],
   ["Uses text alternatives for meaningful images and hides decorative images from assistive technology.", "Fournit des équivalents textuels pour les images utiles et masque les images décoratives aux technologies d’assistance."],
-  ["Keeps Call and Text actions easy to reach, including on phone-width screens.", "Garde les actions d’appel et de texto faciles à atteindre, y compris sur les écrans de téléphone."],
+  ["Keeps Call, Text, and WhatsApp actions easy to reach, including on phone-width screens.", "Garde les actions d’appel, de texto et de WhatsApp faciles à atteindre, y compris sur les écrans de téléphone."],
   ["Uses strong colour contrast and does not rely on colour alone to communicate meaning.", "Utilise un contraste de couleurs élevé et ne se fie pas uniquement à la couleur pour transmettre un sens."],
   ["Stops automatic movement when reduced motion or browser data-saving mode is requested.", "Arrête le mouvement automatique lorsque la réduction des animations ou le mode d’économie de données est demandé."],
   ["Provides manual controls for every carousel.", "Fournit des commandes manuelles pour chaque carrousel."],
   ["Uses labelled form fields, clear validation, and status messages that assistive technology can announce.", "Utilise des champs de formulaire étiquetés, une validation claire et des messages d’état que les technologies d’assistance peuvent annoncer."],
   ["Google review pages, Cloudflare Turnstile, phone dialers, and messaging applications are third-party experiences. Their accessibility can vary by device and service provider.", "Les pages d’avis Google, Cloudflare Turnstile, les composeurs téléphoniques et les applications de messagerie sont des services tiers. Leur accessibilité peut varier selon l’appareil et le fournisseur."],
-  ["If the website form presents a barrier, customers can call, text, or email Babbal directly.", "Si le formulaire du site présente un obstacle, les clients peuvent appeler, texter ou envoyer un courriel directement à Babbal."],
+  ["If the website form presents a barrier, customers can call, text, WhatsApp, or email Babbal directly.", "Si le formulaire du site présente un obstacle, les clients peuvent appeler, texter, utiliser WhatsApp ou envoyer un courriel directement à Babbal."],
   ["Accessibility feedback", "Commentaires sur l’accessibilité"],
   ["Tell Babbal what page or task caused difficulty, what device or assistive technology you were using if you are comfortable sharing it, and how you would like a reply.", "Indiquez à Babbal la page ou la tâche qui a causé une difficulté, l’appareil ou la technologie d’assistance utilisés si vous êtes à l’aise de le préciser, et la façon dont vous souhaitez recevoir une réponse."],
-  ["Call or text:", "Appel ou texto :"],
+  ["Call:", "Appel :"],
+  ["Text:", "Texto :"],
   ["Email:", "Courriel :"]
 ];
 
@@ -282,6 +292,7 @@ const notFoundTranslations = [
   ["That page is not here.", "Cette page est introuvable."],
   ["The address may have changed. Return to the homepage, or contact Babbal if you need mobile vehicle help.", "L’adresse a peut-être changé. Retournez à l’accueil ou contactez Babbal si vous avez besoin d’aide automobile mobile."],
   ["Return home", "Retour à l’accueil"],
+  ["WhatsApp Babbal", "Écrire à Babbal sur WhatsApp"],
   ["Call Babbal", "Appeler Babbal"],
   ["Mobile service across the Niagara Region.", "Service mobile dans toute la région de Niagara."]
 ];
@@ -296,6 +307,7 @@ function localizeRoutes(html, pageName) {
   let result = html
     .replace('<html lang="en-CA">', '<html lang="fr-CA">')
     .replaceAll(`body=${englishSms}`, `body=${frenchSms}`)
+    .replaceAll(`text=${englishSms}`, `text=${frenchSms}`)
     .replaceAll('src="assets/', 'src="/assets/')
     .replaceAll('href="assets/', 'href="/assets/')
     .replaceAll('href="styles.css', 'href="/styles.css')

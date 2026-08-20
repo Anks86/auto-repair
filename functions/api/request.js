@@ -88,7 +88,7 @@ function validateSubmission(input) {
 
   const valid = isSingleLine(submission.name, 2, 80)
     && phoneIsValid
-    && ["Call", "Text"].includes(submission.reply)
+    && ["Call", "Text", "WhatsApp"].includes(submission.reply)
     && isSingleLine(submission.vehicle, 2, 120)
     && isSingleLine(submission.location, 2, 120)
     && helpIsValid

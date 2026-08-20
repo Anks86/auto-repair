@@ -78,6 +78,20 @@ test("valid request verifies the visitor and sends one email", async () => {
   assert.match(email.subject, /2017 Honda Civic/);
 });
 
+test("WhatsApp is accepted as a preferred reply method", async () => {
+  const fetchCalls = [];
+  const emailCalls = [];
+  const request = makeRequest({ ...validSubmission, reply: "WhatsApp" });
+  const response = await handleServiceRequest(
+    { request, env: makeEnvironment(emailCalls) },
+    { fetchFn: successfulFetch(fetchCalls) }
+  );
+
+  assert.equal(response.status, 200);
+  assert.equal(emailCalls.length, 1);
+  assert.match(emailCalls[0].text, /Preferred reply: WhatsApp/);
+});
+
 test("email HTML escapes customer-provided markup", async () => {
   const fetchCalls = [];
   const emailCalls = [];

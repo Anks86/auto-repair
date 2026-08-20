@@ -45,6 +45,23 @@ for (const file of htmlFiles) {
     errors.push(`${relativeFile}: contains the removed spam warning`);
   }
 
+  const whatsappLinks = [...html.matchAll(/href="(https:\/\/wa\.me\/[^"]+)"/g)].map((match) => match[1]);
+  if (whatsappLinks.length === 0) {
+    errors.push(`${relativeFile}: missing a WhatsApp contact option`);
+  }
+  if (whatsappLinks.some((href) => !href.startsWith("https://wa.me/12899313791"))) {
+    errors.push(`${relativeFile}: contains an unexpected WhatsApp number`);
+  }
+  if (["index.html", "fr/index.html"].includes(relativeFile)) {
+    if (html.includes("Read what Niagara drivers say") || html.includes("Lire ce que disent les conducteurs de Niagara")) {
+      errors.push(`${relativeFile}: contains the removed Meet Babbal review link`);
+    }
+    const preparedWhatsAppLinks = whatsappLinks.filter((href) => href.startsWith("https://wa.me/12899313791?text="));
+    if (preparedWhatsAppLinks.length < 6) {
+      errors.push(`${relativeFile}: expected at least 6 prepared WhatsApp contact links, found ${preparedWhatsAppLinks.length}`);
+    }
+  }
+
   const ids = [...html.matchAll(/\sid="([^"]+)"/g)].map((match) => match[1]);
   if (new Set(ids).size !== ids.length) errors.push(`${relativeFile}: contains duplicate IDs`);
 

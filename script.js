@@ -27,9 +27,9 @@ const uiText = isFrench ? {
   sendRequest: "Envoyer la demande de service",
   sendingButton: "Envoi en cours...",
   sendingStatus: "Envoi de votre demande...",
-  sentStatus: "Votre demande a été envoyée. Babbal répondra par appel ou texto.",
+  sentStatus: "Votre demande a été envoyée. Babbal répondra par appel, texto ou WhatsApp.",
   timedOut: "Le formulaire a expiré. Veuillez réessayer.",
-  notSent: "Votre demande n’a pas été envoyée. Réessayez, ou appelez ou textez Babbal."
+  notSent: "Votre demande n’a pas été envoyée. Réessayez, ou appelez, textez ou écrivez à Babbal sur WhatsApp."
 } : {
   play: "Play",
   pause: "Pause",
@@ -46,9 +46,9 @@ const uiText = isFrench ? {
   sendRequest: "Send service request",
   sendingButton: "Sending...",
   sendingStatus: "Sending your request...",
-  sentStatus: "Your request was sent. Babbal will reply by call or text.",
+  sentStatus: "Your request was sent. Babbal will reply by call, text, or WhatsApp.",
   timedOut: "The form timed out. Please try once more.",
-  notSent: "Your request was not sent. Please try again, or call or text Babbal."
+  notSent: "Your request was not sent. Please try again, or call, text, or WhatsApp Babbal."
 };
 let turnstileToken = "";
 let turnstileWidgetId = null;

@@ -1016,7 +1016,10 @@ a {
   display: flex;
   flex: 0 0 auto;
   align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
   gap: 10px;
+  max-width: 640px;
 }
 
 .urgent-actions a {
@@ -2941,7 +2944,7 @@ a {
     bottom: 0;
     left: 0;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     min-height: 68px;
     border-top: 1px solid rgba(255, 255, 255, 0.12);
     background: var(--ink-deep);
@@ -2953,13 +2956,20 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 9px;
+    gap: 6px;
+    padding-inline: 6px;
+    font-size: 0.8rem;
     font-weight: 850;
+    text-align: center;
   }
 
   .mobile-action-bar a:first-child {
     background: var(--amber);
     color: var(--ink-deep);
+  }
+
+  .mobile-action-bar a + a {
+    border-left: 1px solid rgba(255, 255, 255, 0.16);
   }
 
   .mobile-action-bar svg {
